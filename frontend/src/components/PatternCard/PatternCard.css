@@ -1,0 +1,59 @@
+.pattern-card {
+  background: white;
+  border: none; /* Убираем рамку, работаем тенями */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.pattern-card-image {
+  width: 100%;
+  aspect-ratio: 3 / 4; /* Вертикальный формат как в журналах */
+  object-fit: cover;
+}
+
+.pattern-card-info {
+  padding: 20px;
+  text-align: left;
+}
+
+.pattern-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+  line-height: 1.4;
+  height: 45px; /* Чтобы карточки были ровными */
+  overflow: hidden;
+}
+
+.pattern-card-meta {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pattern-category-tag {
+  color: #ff4a6b; /* Розовый акцент */
+  font-weight: bold;
+}
+
+.pattern-card-button {
+  border: 2px solid #2c2c2c;
+  background: transparent;
+  color: #2c2c2c;
+  padding: 12px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.pattern-card-button:hover {
+  background: #2c2c2c;
+  color: white;
+}

@@ -1,0 +1,45 @@
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.filters-container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+  background: white;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.filters-container select {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 0; /* Burda любит прямые углы */
+  background-color: white;
+  font-size: 14px;
+  min-width: 150px;
+  cursor: pointer;
+  outline: none;
+}
+
+.filters-container select:focus {
+  border-color: #ff4a6b; /* Акцентный цвет (розовый как у Burda) */
+}
+
+.patterns-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
