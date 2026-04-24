@@ -17,7 +17,7 @@ function App() {
         const data = await response.json();
         setPatterns(data); // Кладем привезенные данные на "полку"
       } catch (error) {
-        console.error("Ошибка курьера:", error);
+        console.error("Ошибка:", error);
       }
     };
 
@@ -29,7 +29,6 @@ function App() {
     const genderMatch = selectedGender === 'all' || pattern.gender === selectedGender;
     const categoryMatch = selectedCategory === 'all' || pattern.category === selectedCategory;
     
-    // Проверка размера: так как в данных теперь массив [42, 44], 
     // мы проверяем, есть ли выбранный размер внутри этого массива
     const sizeMatch = selectedSize === 'all' || 
                       pattern.sizes.map(String).includes(selectedSize);
@@ -58,7 +57,9 @@ function App() {
           <option value="all">All</option>
           <option value="dresses">Dresses</option>
           <option value="pants">Pants</option>
-          <option value="t-shirts">Shirts</option>
+          <option value="blouses">Blouses</option>
+          <option value="outerwear">Outerwear</option> 
+          <option value="other">Other</option> 
         </select>
 
         {/* Динамический фильтр по размеру */}
