@@ -1,6 +1,6 @@
 :root {
   font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
-  background-color: #f9f9f9; /* Светло-серый фон как на Burda */
+  background-color: #f9f9f9; /* Светло-серый фон */
   color: #2c2c2c;
 }
 
@@ -32,6 +32,8 @@ h2 {
 }
 
 h1 {
+  font-family: 'Tenor Sans', sans-serif;
+  font-weight: 200;
   font-size: 56px;
   letter-spacing: -1.68px;
   margin: 32px 0;

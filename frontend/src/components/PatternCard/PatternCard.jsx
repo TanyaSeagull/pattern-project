@@ -7,7 +7,7 @@ function PatternCard({ pattern }) {
       pants: 'Брюки',
       skirts: 'Юбки',
       dresses: 'Платья',
-      't-shirts': 'Футболки' // Добавил категорию из твоих новых данных
+      't-shirts': 'Футболки' 
     };
     return categories[category] || category;
   };
@@ -25,8 +25,7 @@ function PatternCard({ pattern }) {
           <h3 className="pattern-card-title">{pattern.title}</h3>
           
           <div className="pattern-card-meta">
-            {/* ИСПРАВЛЕНО: выводим диапазон размеров через тире или запятую */}
-            <span>Размеры: <strong>{pattern.sizes.join(', ')}</strong></span>
+            <span>Sizes: <strong>{pattern.sizes.join(', ')}</strong></span>
             {' | '}
             <span className="pattern-category-tag">
               {getCategoryName(pattern.category)}
@@ -40,7 +39,7 @@ function PatternCard({ pattern }) {
           rel="noopener noreferrer"   
           className="pattern-card-button"
         >
-          Скачать у автора
+          Download
         </a>
       </div>
     </div>
