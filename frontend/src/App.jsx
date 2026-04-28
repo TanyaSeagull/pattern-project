@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import PatternCard from './components/PatternCard/PatternCard';
+import axios from 'axios';
 import './App.css';
+
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 function App() {
   // Данные хранятся в состоянии. Сначала тут пустой массив []
@@ -11,18 +14,17 @@ function App() {
   const [selectedSize, setSelectedSize] = useState('all');
 
   useEffect(() => {
-    const fetchPatterns = async () => {
-      try {
-        const response = await fetch('http://localhost:5000/api/patterns');
-        const data = await response.json();
-        setPatterns(data); // Кладем привезенные данные на "полку"
-      } catch (error) {
-        console.error("Ошибка:", error);
-      }
-    };
-
-    fetchPatterns();
-  }, []); // Пустые скобки [] значат: "сделай это один раз при открытии сайта"
+  const fetchPatterns = async () => {
+    try {
+      // Используем переменную API_URL и добавляем путь к эндпоинту
+      const response = await axios.get(`${API_URL}/api/patterns`);
+      setPatterns(response.data);
+    } catch (error) {
+      console.error("Ошибка при загрузке:", error);
+    }
+  };
+  fetchPatterns();
+}, []); // Пустые скобки [] значат: "сделай это один раз при открытии сайта"
 
   // Умная фильтрация
     const filteredPatterns = patterns.filter((pattern) => {
@@ -41,7 +43,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1>Pattern Aggregator</h1>
+      <h1>NeedleNet</h1>
 
       <div className="filters-container">
         {/* Фильтр по полу */}

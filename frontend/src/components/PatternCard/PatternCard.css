@@ -41,16 +41,14 @@
 }
 
 .pattern-card-button {
-  border: 2px solid #2c2c2c;
-  background: transparent;
-  color: #2c2c2c;
-  padding: 12px;
+  display: block;
   text-align: center;
+  background: #222;
+  color: white;
+  padding: 10px;
   text-decoration: none;
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
+  margin-top: 10px;
+  border-radius: 6px;
 }
 
 .pattern-card-button:hover {
