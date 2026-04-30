@@ -84,6 +84,14 @@ function App() {
           </div>
         )}
       </div>
+      <footer className="footer">
+      <p>
+        © 2026 NeedleNet | Created by{" "}
+        <a href="https://tanyaseagull.github.io/Portfolio/" target="_blank" rel="noopener noreferrer">
+          Tanya Seagull
+        </a>
+      </p>
+    </footer>
     </div>
   );
 }

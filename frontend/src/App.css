@@ -35,3 +35,26 @@
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 30px;
 }
+
+.footer {
+  margin-top: 50px;       
+  padding: 40px 0;       
+  border-top: 1px solid #eee; /* Тонкая серая линия сверху */
+  text-align: center;
+  font-family: 'Montserrat', sans-serif; 
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #888;            
+}
+
+.footer a {
+  color: #333;            
+  text-decoration: none;  
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #000;            
+  text-decoration: underline; 
+}
