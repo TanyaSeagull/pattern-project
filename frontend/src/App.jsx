@@ -6,7 +6,7 @@ import './App.css';
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 function App() {
-  // Данные хранятся в состоянии. Сначала тут пустой массив []
+  // Сначала тут пустой массив []
   const [patterns, setPatterns] = useState([]);
   // Состояния для трех фильтров
   const [selectedGender, setSelectedGender] = useState('all');
@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
   const fetchPatterns = async () => {
     try {
-      // Используем переменную API_URL и добавляем путь к эндпоинту
+      // Используем переменную API_URL
       const response = await axios.get(`${API_URL}/api/patterns`);
       setPatterns(response.data);
     } catch (error) {
@@ -24,21 +24,21 @@ function App() {
     }
   };
   fetchPatterns();
-}, []); // Пустые скобки [] значат: "сделай это один раз при открытии сайта"
+}, []); // Пустые скобки [] - "сделай это один раз при открытии сайта"
 
   // Умная фильтрация
     const filteredPatterns = patterns.filter((pattern) => {
     const genderMatch = selectedGender === 'all' || pattern.gender === selectedGender;
     const categoryMatch = selectedCategory === 'all' || pattern.category === selectedCategory;
     
-    // мы проверяем, есть ли выбранный размер внутри этого массива
+    // есть ли выбранный размер внутри этого массива
     const sizeMatch = selectedSize === 'all' || 
                       pattern.sizes.map(String).includes(selectedSize);
 
     return genderMatch && categoryMatch && sizeMatch;
   });
 
-  // Получаем список всех уникальных размеров из всех лекал для выпадающего списка
+  // список всех уникальных размеров из всех лекал для выпадающего списка
   const allSizes = [...new Set(patterns.flatMap(p => p.sizes))].sort((a, b) => a - b);
 
   return (

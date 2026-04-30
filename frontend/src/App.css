@@ -18,7 +18,7 @@
 .filters-container select {
   padding: 10px 15px;
   border: 1px solid #ddd;
-  border-radius: 0; /* Burda любит прямые углы */
+  border-radius: 0; 
   background-color: white;
   font-size: 14px;
   min-width: 150px;
@@ -27,7 +27,7 @@
 }
 
 .filters-container select:focus {
-  border-color: #ff4a6b; /* Акцентный цвет (розовый как у Burda) */
+  border-color: #ff4a6b; 
 }
 
 .patterns-grid {

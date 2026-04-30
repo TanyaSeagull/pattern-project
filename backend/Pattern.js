@@ -4,7 +4,7 @@ const patternSchema = new mongoose.Schema({
   title: String,
   gender: String,
   category: String,
-  sizes: [Number], // Массив чисел
+  sizes: [Number],
   link: String,
   image: String
 });

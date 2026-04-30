@@ -14,7 +14,7 @@ app.use(cors());
 
 // 1. Подключаемся к облаку
 mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('✅ Успешно подключились к MongoDB Atlas!'))
+  .then(() => console.log('Успешно подключились к MongoDB Atlas!'))
   .catch((err) => console.error('❌ Ошибка подключения к базе:', err));
 
 // 2. API-маршрут
@@ -22,7 +22,7 @@ app.get('/api/patterns', async (req, res) => {
   try {
     // Отдать все лекала, что есть в базе
     const patterns = await Pattern.find(); 
-    res.json(patterns); // Отправляем их React-у
+    res.json(patterns); // Отправляем их React
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Ошибка сервера при поиске лекал" });
@@ -31,5 +31,5 @@ app.get('/api/patterns', async (req, res) => {
 
 // Запускаем сервер
 app.listen(PORT, () => {
-  console.log(`🚀 Сервер самурая работает на http://localhost:${PORT}`);
+  console.log(`Сервер самурая работает на http://localhost:${PORT}`);
 });
